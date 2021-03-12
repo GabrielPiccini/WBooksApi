@@ -29,3 +29,4 @@ Metrics/BlockLength:
     - app/admin/**/*
 #Layout/EndOfLine: 
  # EnforcedStyle: crlf
+Enabled: false
