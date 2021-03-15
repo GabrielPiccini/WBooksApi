@@ -27,3 +27,6 @@
 /config/master.key
 #ignore test folder
 /test
+#ignore log and tmp folder
+/tmp
+/log
