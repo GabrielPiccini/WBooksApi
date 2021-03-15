@@ -27,9 +27,5 @@ Metrics/BlockLength:
   Exclude:
     - spec/**/*
     - app/admin/**/*
-Layout/EndOfLine: 
-<<<<<<< HEAD
-  EnforcedStyle: crlf
-=======
+Layout/EndOfLine:
   Enabled: false
->>>>>>> dd6f4114711d528480affeb496033f1cb0a760ec
