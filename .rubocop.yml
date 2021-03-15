@@ -28,4 +28,5 @@ Metrics/BlockLength:
     - spec/**/*
     - app/admin/**/*
 Layout/EndOfLine: 
+  EnforcedStyle: crlf
   Enabled: false
