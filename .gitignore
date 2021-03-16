@@ -8,10 +8,10 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+#/log/*
+#/tmp/*
+#!/log/.keep
+#!/tmp/.keep
 
 # Ignore uploaded files in development
 /storage/*
@@ -27,6 +27,6 @@
 /config/master.key
 #ignore test folder
 /test
-#ignore log and tmp folder
-/tmp
-/log
+
+/log/*
+/tmp/*
