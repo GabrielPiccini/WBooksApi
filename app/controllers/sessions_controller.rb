@@ -1,6 +1,11 @@
 class SessionsController < Devise::SessionsController
   respond_to :json
   before_action :rewrite_param_names, only: [:create]
+
+  def create
+    super
+  end
+
   private
 
   def respond_with(resource, _opts = {})
