@@ -4,6 +4,7 @@ class SessionsController < Devise::SessionsController
 
   def create
     super
+    create_internals
   end
 
   private
@@ -18,6 +19,7 @@ class SessionsController < Devise::SessionsController
 
   def rewrite_param_names
     return unless params[:session]
+
     request.params[:user] =
       { email: request.params[:session][:email], password: request.params[:session][:password] }
   end
