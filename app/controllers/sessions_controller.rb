@@ -4,7 +4,6 @@ class SessionsController < Devise::SessionsController
 
   def create
     super
-    create_internals
   end
 
   private
