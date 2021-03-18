@@ -6,5 +6,6 @@ class RegistrationsController < Devise::RegistrationsController
 
     resource.save
     render_resource(resource)
+    sign_in(resource)
   end
 end
