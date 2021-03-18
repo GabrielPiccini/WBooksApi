@@ -7,6 +7,7 @@ class SessionsController < Devise::SessionsController
     super
   end
   # rubocop:enable Lint/UselessMethodDefinition
+
   private
 
   def respond_with(resource, _opts = {})
