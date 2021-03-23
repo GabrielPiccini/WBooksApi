@@ -1,6 +1,6 @@
 #!/bin/sh
  echo "\033[34mRunning Rubocop\033[0m"
-RUN_CHECK_CMD='docker-compose run --rm web bundle exec rubocop app --format simple' #agregar "spec" cuando use tests
+RUN_CHECK_CMD='docker-compose run --rm web bundle exec rubocop app spec --format simple' #agregar "spec" cuando use tests
 RUN_TESTS_OUTPUT=`${RUN_CHECK_CMD}`
  if [ $? -eq 1 ]
 then

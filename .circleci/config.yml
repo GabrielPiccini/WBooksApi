@@ -44,12 +44,12 @@ jobs:
 
       - run:
           name: Run Rubocop
-          command: bundle exec rubocop app --format simple #agregar "spec" cuando use tests
+          command: bundle exec rubocop app spec --format simple #agregar "spec" cuando use tests
 
-      # Run Tests!
-      # - run:
-      #     name: Run Tests
-      #     command: bundle exec rspec 
+       Run Tests!
+       - run:
+           name: Run Tests
+           command: bundle exec rspec 
 
 workflows:
   version: 2
