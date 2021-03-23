@@ -46,7 +46,7 @@ jobs:
           name: Run Rubocop
           command: bundle exec rubocop app spec --format simple #agregar "spec" cuando use tests
 
-       Run Tests!
+       #Run Tests!
        - run:
            name: Run Tests
            command: bundle exec rspec 
