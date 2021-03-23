@@ -1,9 +1,6 @@
 require 'rails_helper'
 
-
 describe Book, type: :model do
-
- 
   it do
     should validate_presence_of(:genre)
   end
@@ -23,7 +20,6 @@ describe Book, type: :model do
     should validate_presence_of(:year)
   end
 
-  
   subject(:book) do
     build(:book)
   end
@@ -31,7 +27,6 @@ describe Book, type: :model do
   it do
     is_expected.to be_valid
   end
-#=begin
   describe '#create' do
     context 'When the author is nil' do
       subject(:book) do
@@ -88,5 +83,4 @@ describe Book, type: :model do
       end
     end
   end
-#=end
 end
