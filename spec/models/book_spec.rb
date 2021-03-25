@@ -83,7 +83,7 @@ describe Book, type: :model do
         is_expected.to be_invalid
       end
     end
-    
+
     context 'When the year is nil' do
       subject(:book) do
         build(:book, year: nil)
