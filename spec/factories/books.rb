@@ -5,6 +5,6 @@ FactoryBot.define do
     title { Faker::Book.title }
     publisher { Faker::Book.publisher }
     image { Faker::Avatar.image }
-    year { Faker::Date.between(from: '1900-09-23', to: '2020-09-25').month.to_s }
+    year { Faker::Date.between(from: '1900-09-23', to: '2020-09-25').year.to_s }
   end
 end
