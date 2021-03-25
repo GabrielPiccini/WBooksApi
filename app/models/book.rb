@@ -6,5 +6,5 @@ class Book < ApplicationRecord
   validates :publisher, presence: true
   validates :year, presence: true
 
-  has_many :rents
+  has_many :rents, dependent: :destroy
 end
