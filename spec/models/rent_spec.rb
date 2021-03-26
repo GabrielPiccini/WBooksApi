@@ -12,7 +12,7 @@ describe Rent, type: :model do
   it do
     should validate_presence_of(:from)
   end
-  
+
   it do
     should validate_presence_of(:to)
   end
@@ -32,6 +32,7 @@ describe Rent, type: :model do
         build(:rent, user: nil)
       end
       it do
+        puts rent.from
         is_expected.to be_invalid
       end
     end

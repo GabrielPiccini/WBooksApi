@@ -12,7 +12,7 @@ describe User, type: :model do
   it do
     should validate_presence_of(:password)
   end
-  
+
   it do
     should validate_presence_of(:password_confirmation)
   end
@@ -71,7 +71,7 @@ describe User, type: :model do
       subject(:user) do
         build(:user, email: nil)
       end
-      
+
       it do
         is_expected.to be_invalid
       end
