@@ -32,7 +32,6 @@ describe Rent, type: :model do
         build(:rent, user: nil)
       end
       it do
-        puts rent.from
         is_expected.to be_invalid
       end
     end
