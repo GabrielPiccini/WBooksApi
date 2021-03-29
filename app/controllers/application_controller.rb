@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
   before_action :configure_permitted_parameters, if: :devise_controller?
-  
+
   def render_resource(resource)
     if resource.errors.empty?
       render json: resource
@@ -25,6 +25,8 @@ class ApplicationController < ActionController::API
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:password, :password_confirmation, :email, :first_name, :last_name]) 
+    # rubocop:disable Layout/LineLength
+    devise_parameter_sanitizer.permit(:sign_up, keys: %i[password password_confirmation email first_name last_name])
+    # rubocop:enable Layout/LineLength
   end
 end
