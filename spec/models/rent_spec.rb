@@ -21,6 +21,7 @@ describe Rent, type: :model do
     subject(:rent) do
       create(:rent, user: create(:user), book: create(:book))
     end
+
     it do
       is_expected.to be_valid
     end
@@ -31,6 +32,7 @@ describe Rent, type: :model do
       subject(:rent) do
         build(:rent, user: nil)
       end
+
       it do
         is_expected.to be_invalid
       end
@@ -40,6 +42,7 @@ describe Rent, type: :model do
       subject(:rent) do
         build(:rent, book: nil)
       end
+
       it do
         is_expected.to be_invalid
       end
@@ -49,6 +52,7 @@ describe Rent, type: :model do
       subject(:rent) do
         build(:rent, from: nil)
       end
+
       it do
         is_expected.to be_invalid
       end
@@ -58,6 +62,7 @@ describe Rent, type: :model do
       subject(:rent) do
         build(:rent, to: nil)
       end
+
       it do
         is_expected.to be_invalid
       end

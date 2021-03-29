@@ -25,6 +25,7 @@ describe User, type: :model do
     subject(:user) do
       build(:user)
     end
+
     it do
       is_expected.to be_valid
     end
@@ -35,6 +36,7 @@ describe User, type: :model do
       subject(:user) do
         build(:user, first_name: nil)
       end
+
       it do
         is_expected.to be_invalid
       end
@@ -44,6 +46,7 @@ describe User, type: :model do
       subject(:user) do
         build(:user, last_name: nil)
       end
+
       it do
         is_expected.to be_invalid
       end
@@ -53,6 +56,7 @@ describe User, type: :model do
       subject(:user) do
         build(:user, password: nil)
       end
+
       it do
         is_expected.to be_invalid
       end
@@ -62,6 +66,7 @@ describe User, type: :model do
       subject(:user) do
         build(:user, password_confirmation: nil)
       end
+
       it do
         is_expected.to be_invalid
       end
