@@ -1,14 +1,13 @@
 require 'rails_helper'
-require './spec/shared_context/shared_context.rb'
+require './spec/shared_context/shared_context'
 
 describe BooksController, type: :controller do
-
   include_context 'Authenticated User'
 
   describe 'GET #index' do
     context 'When fetching all the books' do
       let!(:books) { create_list(:book, 3) }
-      
+
       before do
         get :index
       end
