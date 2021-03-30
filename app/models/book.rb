@@ -7,4 +7,8 @@ class Book < ApplicationRecord
   validates :year, presence: true
 
   has_many :rents, dependent: :destroy
+
+  def actual_rent
+    rents.where('rents.from <= ?', Time.zone.today).order(:from).last
+  end
 end
