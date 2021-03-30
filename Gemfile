@@ -78,3 +78,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise'
 gem 'devise-jwt', '~> 0.6.0'
+gem 'active_model_serializers'
+gem 'kaminari'

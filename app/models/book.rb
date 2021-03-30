@@ -7,4 +7,10 @@ class Book < ApplicationRecord
   validates :year, presence: true
 
   has_many :rents, dependent: :destroy
+
+  def actual_rent
+    # rubocop:disable Style/StringLiterals, Rails/Date:
+    rents.where("rents.from <= ?", Date.today).order(:from).last
+    # rubocop:enable Style/StringLiterals, Rails/Date:
+  end
 end

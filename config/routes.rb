@@ -10,5 +10,8 @@ Rails.application.routes.draw do
                sessions: 'sessions',
                registrations: 'registrations'
              }
+             
+  get 'api/v1/books', to: 'books#index'
+  get 'api/v1/books/:id', to: 'books#show'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
