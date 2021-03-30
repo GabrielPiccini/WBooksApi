@@ -1,0 +1,1 @@
+.env=DEVISE_JWT_SECRET_KEY
