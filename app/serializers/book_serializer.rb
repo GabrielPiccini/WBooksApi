@@ -4,14 +4,10 @@ class BookSerializer < ActiveModel::Serializer
   def available
     return true if object.actual_rent.blank?
 
-    # rubocop:disable Rails/Date
-    !Date.today.between?(object.actual_rent.from, object.actual_rent.to)
-    # rubocop:enable Rails/Date
+    !Time.zone.today.between?(object.actual_rent.from, object.actual_rent.to)
   end
 
   def actual_rent
-    # rubocop:disable Style/StringLiterals
-    object&.actual_rent&.attributes&.except("updated_at", "created_at")
-    # rubocop:enable Style/StringLiterals
+    object&.actual_rent&.attributes&.except('updated_at', 'created_at')
   end
 end
