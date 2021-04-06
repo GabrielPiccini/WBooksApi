@@ -6,7 +6,6 @@ class RentSerializer < ActiveModel::Serializer
   end
 
   def user
-    # ActiveModelSerializers::SerializableResource.create(:user)
     object&.user&.attributes&.except('updated_at', 'created_at', 'password',
                                      'password_confirmation', 'reset_password_token',
                                      'reset_password_sent_at',
