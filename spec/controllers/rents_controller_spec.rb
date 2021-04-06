@@ -7,7 +7,7 @@ describe RentsController, type: :controller do
   describe 'GET #index' do
     context 'When fetching all the rents' do
       let!(:user) { create(:user) }
-      let!(:rents) { create(:rent, user: user) }
+      let!(:rent) { create(:rent, user: user) }
 
       before do
         get :index
@@ -45,7 +45,7 @@ describe RentsController, type: :controller do
         post :create, params: { rent: { book_id: book[:id] } }
       end
 
-      it 'responses with the rent json' do
+      it 'responds with the rent json' do
         expected = rent.to_json
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
