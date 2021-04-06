@@ -42,7 +42,7 @@ describe RentsController, type: :controller do
       let!(:book) { create(:book) }
 
       subject do
-        post :create, params: { rent: {book_id: book[:id]} }
+        post :create, params: { rent: { book_id: book[:id] } }
       end
 
       it 'responses with the rent json' do
@@ -59,7 +59,7 @@ describe RentsController, type: :controller do
       let!(:book) { create(:book, id: 1) }
 
       before do
-        post :create, params: { rent: {book_id: 1500} }
+        post :create, params: { rent: { book_id: 1500 } }
       end
 
       it 'responds with 422 status' do
@@ -67,5 +67,4 @@ describe RentsController, type: :controller do
       end
     end
   end
-
 end
