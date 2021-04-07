@@ -1,6 +1,7 @@
 class RentsController < ApplicationController
   before_action :authenticate_user!
   before_action :rent_params, only: [:create]
+  after_action :send_email, only: [:create], if: -> { @book }
 
   def index
     @rents = current_user.rents
@@ -28,5 +29,11 @@ class RentsController < ApplicationController
     end
   rescue ActionController::ParameterMissing
     render json: { error: 'Parameter is missing' }, status: :unprocessable_entity
+  end
+
+  def send_email
+    @user = current_user
+    book = @book[:title]
+    MailerWorker.perform_async(@user[:email], @user[:first_name], @rent[:from], @rent[:to], book)
   end
 end
