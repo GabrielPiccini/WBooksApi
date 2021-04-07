@@ -4,6 +4,7 @@ class RentMailer < ApplicationMailer
   #
   #   en.model_mailer.new_record_notification.subject
   #
+  # rubocop:disable Metrics/ParameterLists
   def new_rent(email, name, from, to, book, locale)
     I18n.with_locale(locale) do
       @name = name
@@ -13,4 +14,5 @@ class RentMailer < ApplicationMailer
       mail(to: email, subject: I18n.t(:subject))
     end
   end
+  # rubocop:enable Metrics/ParameterLists
 end
