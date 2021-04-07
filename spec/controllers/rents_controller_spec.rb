@@ -50,11 +50,6 @@ describe RentsController, type: :controller do
         expect(response.body.to_json) =~ JSON.parse(expected)
       end
 
-      it 'sends an email to an user' do
-        expect(MailerWorker).to receive(:perform_async).once
-        subject
-      end
-
       it 'responds with 200 status' do
         expect(response).to have_http_status(:ok)
       end
