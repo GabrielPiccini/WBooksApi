@@ -1,9 +1,7 @@
 class MailerWorker
   include Sidekiq::Worker
 
-  # rubocop:disable Metrics/ParameterLists
-  def perform(email, name, from, to, book, locale)
-    RentMailer.new_rent(email, name, from, to, book, locale).deliver
+  def perform(rent_mail)
+    RentMailer.new_rent(rent_mail).deliver
   end
-  # rubocop:enable Metrics/ParameterLists
 end
