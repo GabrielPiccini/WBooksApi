@@ -34,6 +34,9 @@ class RentsController < ApiController
   def send_email
     @user = current_user
     book = @book[:title]
-    MailerWorker.perform_async(@user[:email], @user[:first_name], @rent[:from], @rent[:to], book)
+    rent_mail = { email: @user[:email], name: @user[:first_name],
+                  from: @rent[:from], to: @rent[:to],
+                  book: book, locale: @user[:locale] }
+    MailerWorker.perform_async(rent_mail)
   end
 end

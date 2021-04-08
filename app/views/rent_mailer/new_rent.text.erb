@@ -1,13 +1,13 @@
-Hello <%= @name %>!
+<%=:greeting%> <%= @name %>!
 
 
-You have rented a new book!
+<%= :notice %>
 
-Details:
+<%= t(:details) %>
 
-  Book title: <%= @book %>
-  From: <%= @from %>
-  To: <%= @to %>
+  <%= t(:book) %> <%= @book %>
+  <%= t(:from) %> <%= @from %>
+  <%= t(:to) %> <%= @to %>
 
-Thanks for choosing us 
+<%= t(:goodbyes) %>
 

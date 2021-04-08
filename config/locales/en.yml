@@ -30,4 +30,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  greeting: 'Hello'
+  subject: 'New book rent!'
+  notice: 'You have rented a new book!'
+  details: 'Details:'
+  book: 'Book title:'
+  from: 'From:'
+  to: 'To:'
+  goodbyes: 'Thanks for choosing us'

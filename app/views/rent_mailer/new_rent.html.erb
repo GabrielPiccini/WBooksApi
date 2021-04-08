@@ -1,14 +1,16 @@
-<h1>Hello <%= @name %>!</h1>
+<h1>
+  <%= t(:greeting) %> <%= @name %>
+</h1>
 
 <p>
-  You have rented a new book! <br>
+  <%= t(:notice) %> <br>
 </p>
-<h4>Details:</h4>
+<h4> <%= t(:details) %> </h4>
 <ul>
-  <li>Book title: <%= @book %></li>
-  <li>From: <%= @from %></li>
-  <li>To: <%= @to %></li>
+  <li> <%= t(:book) %> <%= @book %> </li>
+  <li> <%= t(:from) %> <%= @from %> </li>
+  <li> <%= t(:to) %> <%= @to %> </li>
 </ul>
 <p>
-  Thanks for choosing us 
+  <%= t(:goodbyes) %>
 </p>
