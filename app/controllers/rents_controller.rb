@@ -3,10 +3,14 @@ class RentsController < ApiController
   before_action :rent_params, only: [:create]
   after_action :send_email, only: [:create], if: -> { @book }
 
+  after_action :verify_policy_scoped, only: [:index]
+  after_action :verify_authorized, only: [:create]
+
   def index
-    @rents = current_user.rents
+    @rents = policy_scope(Rent)
     return render json: { error: 'The user has no rents' }, status: :not_found if @rents.empty?
 
+    authorize @rents
     render json: @rents.order(:id).page(params[:page])
   end
 
@@ -14,6 +18,7 @@ class RentsController < ApiController
     @book = Book.find(params[:rent][:book_id])
     @rent = Rent.create(user: current_user, book: @book, from: params[:rent][:from],
                         to: params[:rent][:to])
+    authorize @rent
     render json: @rent
   rescue ActiveRecord::RecordNotFound
     render json: { error: 'The book cannot be found' }, status: :not_found
