@@ -1,0 +1,9 @@
+es:
+  greeting: 'Hola'
+  subject: '¡Nuevo libro alquilado!'
+  notice: '¡Has alquilado un libro nuevo!'
+  details: 'Detalles:'
+  book: 'Título del libro:'
+  from: 'Desde:'
+  to: 'Hasta:'
+  goodbyes: 'Gracias por elegirnos'
