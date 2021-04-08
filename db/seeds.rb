@@ -16,3 +16,4 @@
       year: Faker::Date.between(from: '1900-09-23', to: '2020-09-25').year.to_s
     )
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

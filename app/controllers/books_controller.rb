@@ -1,4 +1,4 @@
-class BooksController < ApplicationController
+class BooksController < ApiController
   before_action :authenticate_user!
   def index
     @books = Book.order(:id).page(params[:page])
