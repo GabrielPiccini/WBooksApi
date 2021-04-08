@@ -1,4 +1,4 @@
-class RentsController < ApplicationController
+class RentsController < ApiController
   before_action :authenticate_user!
   before_action :rent_params, only: [:create]
   after_action :send_email, only: [:create], if: -> { @book }

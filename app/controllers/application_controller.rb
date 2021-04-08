@@ -1,32 +1,12 @@
-class ApplicationController < ActionController::API
-  before_action :configure_permitted_parameters, if: :devise_controller?
+class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+  skip_before_action :verify_authenticity_token
 
-  def render_resource(resource)
-    if resource.errors.empty?
-      render json: resource
+  def authenticate_admin_user!
+    if admin_user_signed_in?
+      super
     else
-      validation_error(resource)
+      redirect_to new_admin_user_session_path
     end
-  end
-
-  def validation_error(resource)
-    render json: {
-      errors: [
-        {
-          status: '400',
-          title: 'Bad Request',
-          detail: resource.errors,
-          code: '100'
-        }
-      ]
-    }, status: :bad_request
-  end
-
-  protected
-
-  def configure_permitted_parameters
-    # rubocop:disable Layout/LineLength
-    devise_parameter_sanitizer.permit(:sign_up, keys: %i[password password_confirmation email first_name last_name])
-    # rubocop:enable Layout/LineLength
   end
 end
