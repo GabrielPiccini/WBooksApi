@@ -10,4 +10,3 @@ FactoryBot.define do
     user
   end
 end
-  
