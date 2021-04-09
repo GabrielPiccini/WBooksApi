@@ -6,9 +6,9 @@ describe BookSuggestionsController, type: :controller do
       let!(:book_suggestion) { build(:book_suggestion) }
 
       before do
-        post :create, params: { book_suggestion:{ title: book_suggestion.title,
-                                                  author: book_suggestion.author,
-                                                  link: book_suggestion.link }  }
+        post :create, params: { book_suggestion: { title: book_suggestion.title,
+                                                   author: book_suggestion.author,
+                                                   link: book_suggestion.link } }
       end
 
       it 'responds with the book suggestion json' do
@@ -25,9 +25,9 @@ describe BookSuggestionsController, type: :controller do
       let!(:book_suggestion) { build(:book_suggestion, user: nil) }
 
       before do
-        post :create, params: { book_suggestion:{ title: book_suggestion.title,
-                                                  author: book_suggestion.author,
-                                                  link: book_suggestion.link }  }
+        post :create, params: { book_suggestion: { title: book_suggestion.title,
+                                                   author: book_suggestion.author,
+                                                   link: book_suggestion.link } }
       end
 
       it 'responds with the book suggestion json' do
@@ -44,9 +44,9 @@ describe BookSuggestionsController, type: :controller do
       let!(:book_suggestion) { build(:book_suggestion) }
 
       before do
-        post :create, params: { book_suggestion:{ title: nil,
-                                                  author: book_suggestion.author,
-                                                  link: book_suggestion.link }  }
+        post :create, params: { book_suggestion: { title: nil,
+                                                   author: book_suggestion.author,
+                                                   link: book_suggestion.link } }
       end
 
       it 'responds with error' do
@@ -63,9 +63,9 @@ describe BookSuggestionsController, type: :controller do
       let!(:book_suggestion) { build(:book_suggestion) }
 
       before do
-        post :create, params: { book_suggestion:{ title: book_suggestion.title,
-                                                  author: nil,
-                                                  link: book_suggestion.link }  }
+        post :create, params: { book_suggestion: { title: book_suggestion.title,
+                                                   author: nil,
+                                                   link: book_suggestion.link } }
       end
 
       it 'responds with error' do
@@ -82,9 +82,9 @@ describe BookSuggestionsController, type: :controller do
       let!(:book_suggestion) { build(:book_suggestion) }
 
       before do
-        post :create, params: { book_suggestion:{ title: book_suggestion.title,
-                                                  author: book_suggestion.author,
-                                                  link: nil }  }
+        post :create, params: { book_suggestion: { title: book_suggestion.title,
+                                                   author: book_suggestion.author,
+                                                   link: nil } }
       end
 
       it 'responds with error' do
