@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'api/v1/books', to: 'books#index'
   get 'api/v1/books/:id', to: 'books#show'
 
+  post 'api/v1/books/suggestions', to: 'book_suggestions#create'
+
   get 'api/v1/rents', to: 'rents#index'
   post 'api/v1/rents', to: 'rents#create'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
