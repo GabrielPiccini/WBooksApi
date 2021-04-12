@@ -1,4 +1,5 @@
 class RentsController < ApiController
+  include Wor::Paginate
   before_action :authenticate_user!
   before_action :rent_params, only: [:create]
   after_action :send_email, only: [:create], if: -> { @book }
@@ -11,7 +12,7 @@ class RentsController < ApiController
     return render json: { error: 'The user has no rents' }, status: :not_found if @rents.empty?
 
     authorize @rents
-    render json: @rents.order(:id).page(params[:page])
+    render_paginated @rents.order(:id)
   end
 
   def create

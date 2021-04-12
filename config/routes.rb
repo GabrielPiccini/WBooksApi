@@ -10,9 +10,9 @@ Rails.application.routes.draw do
              },
              controllers: {
                sessions: 'sessions',
-               registrations: 'registrations'
-             }
-             
+               registrations: 'registrations',
+               omniauth_callbacks: 'users/omniauth_callbacks'
+             }        
   get 'api/v1/books', to: 'books#index'
   get 'api/v1/books/:id', to: 'books#show'
 

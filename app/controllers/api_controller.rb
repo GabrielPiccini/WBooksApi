@@ -1,4 +1,5 @@
 class ApiController < ActionController::API
+  respond_to :json
   include Pundit
   before_action :configure_permitted_parameters, if: :devise_controller?
   include ActionView::Layouts
