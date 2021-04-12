@@ -12,8 +12,7 @@ Rails.application.routes.draw do
                sessions: 'sessions',
                registrations: 'registrations',
                omniauth_callbacks: 'users/omniauth_callbacks'
-             }
-  # devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }           
+             }        
   get 'api/v1/books', to: 'books#index'
   get 'api/v1/books/:id', to: 'books#show'
 

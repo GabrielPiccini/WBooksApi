@@ -16,9 +16,7 @@ class User < ApplicationRecord
 
   def self.from_omniauth(access_token)
     data = access_token.info
-    # rubocop disable: Rails/FindBy
     user = User.find_by(email: data['email'])
-    # rubocop enable: Rails/FindBy
 
     # Uncomment the section below if you want users to be created if they don't exist
     password = Devise.friendly_token[0, 20]

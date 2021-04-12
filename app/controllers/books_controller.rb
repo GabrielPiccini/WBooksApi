@@ -1,8 +1,10 @@
 class BooksController < ApiController
+  include Wor::Paginate
   before_action :authenticate_user!
+
   def index
-    @books = Book.order(:id).page(params[:page])
-    render json: @books
+    @books = Book.all.order(:id)
+    render_paginated @books
   end
 
   def show

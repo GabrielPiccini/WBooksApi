@@ -48,6 +48,8 @@ gem 'pundit'
 
 gem 'omniauth', '1.9.1'
 gem 'omniauth-google-oauth2', '0.8.0'
+
+gem 'wor-paginate'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
