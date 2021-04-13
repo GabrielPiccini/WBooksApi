@@ -1,8 +1,9 @@
 class OpenLibraryService
   include HTTParty
+  API_URL = Rails.application.secrets.apilibrary.freeze
 
   def execute(isbn)
-    link = "#{Rails.application.secrets.apilibrary + isbn}&format=json&jscmd=data"
+    link = "#{API_URL}?bibkeys=#{isbn}&format=json&jscmd=data"
     response = HTTParty.get(link)
     [response.code, response.parsed_response]
   end
